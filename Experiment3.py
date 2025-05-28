@@ -16,10 +16,9 @@ tokenizer = BertTokenizer.from_pretrained(model_name)
 model = BertModel.from_pretrained(model_name, output_attentions=True)
 model.eval()
 
-from datasets import load_dataset, set_caching_enabled
-
+from datasets import load_dataset
 # Temporarily disable caching
-set_caching_enabled(False)
+#set_caching_enabled(False)
 dataset = load_dataset("glue", "sst2")
 
 test_sentences = dataset['validation']['sentence'][:100]  # First 100 sentences
